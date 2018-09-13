@@ -16,22 +16,22 @@ function dateWithOffset(date, offset) {
 }
 
 
-function buildWeek(start_date) {
+function buildWeek(start_date, data_getter) {
   return [...Array(7).keys()].map(offset => {
     let date = dateWithOffset(start_date, offset);
+    let data = data_getter ? data_getter(date) : {}
 
-    return { date }
+    return { date, data }
   });
 }
 
 
-function buildCalendar(date, week_starts_on=1, calendar=[]) {
+function createCalendar(date, week_starts_on=1, data_getter=null, calendar=[]) {
   let [last_week] = calendar.slice(-1);
   let [last_day] = (last_week || []).slice(-1);
   let last_day_of_month = lastDayOfMonth(date);
 
   if (last_day && last_day.date >= last_day_of_month) {
-    console.log({calendar})
     return calendar;
   }
 
@@ -45,8 +45,8 @@ function buildCalendar(date, week_starts_on=1, calendar=[]) {
     new_week_start_date = dateWithOffset(last_day.date, 1)
   }
 
-  return buildCalendar(date, week_starts_on, [...calendar, buildWeek(new_week_start_date)]);
+  return createCalendar(date, week_starts_on, data_getter, [...calendar, buildWeek(new_week_start_date, data_getter)]);
 }
 
 
-module.exports = buildCalendar;
+module.exports = createCalendar;
