@@ -1,0 +1,19 @@
+{
+  // Required
+  "manifest_version": 2,
+  "name": "Streak",
+  "version": "0.0.1",
+
+  // Recommended
+  "description": "A plain text description",
+
+  "chrome_url_overrides" : {
+    "newtab": "calendar.html"
+  },
+
+  "permissions" : [
+    "management"
+  ]
+
+
+}

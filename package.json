@@ -4,12 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./test"
+    "test": "mocha ./test",
+    "build": "npx babel src --out-dir build --presets env --copy-files; browserify build/index.js -o build/index.js -d"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.0.1",
+    "@babel/node": "^7.0.0",
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-es2015-template-literals": "^6.22.0",
+    "babel-preset-env": "^1.7.0",
     "chai": "^4.1.2",
     "mocha": "^5.2.0"
-  }
+  },
+  "dependencies": {}
 }
