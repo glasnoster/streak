@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "watch": "npm-watch",
     "test": "mocha ./test",
     "build": "npx babel src --out-dir build --presets env --copy-files; browserify build/index.js -o build/index.js -d"
   },
@@ -18,5 +19,18 @@
     "chai": "^4.1.2",
     "mocha": "^5.2.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "npm-watch": "^0.4.0"
+  },
+  "watch": {
+    "build": {
+      "patterns": ["src/"],
+      "extensions": "js,jsx,html,css",
+      "ignore": "src/vendor/external.min.js",
+      "quiet": true,
+      "legacyWatch": true,
+      "delay": 2500,
+      "runOnChangeOnly": false
+    }
+  }
 }
