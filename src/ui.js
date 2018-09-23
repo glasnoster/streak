@@ -1,6 +1,11 @@
 const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 
+function renderControlsToString() {
+  return "<div class='controls'>Controls</div>";
+}
+
+
 function renderCalendarToString(calendar_data, week_starts_on=1) {
   let today = new Date();
   return [
@@ -68,4 +73,4 @@ function dayDiv(data, today) {
   return `<div class='day ${classes}' >${date_string}</div>`
 }
 
-module.exports = renderCalendarToString;
+module.exports = {renderCalendarToString, renderControlsToString};

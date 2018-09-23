@@ -1,8 +1,8 @@
 .background {
   background-image:    url("images/10-coffee-stain-circle-ring-background-8.jpg");
-  background-position: bottom left;
+  background-position: top right;
   background-repeat:   no-repeat;
-  background-size:     500px;
+  background-size:     300px;
 }
 
 .calendar {
@@ -89,4 +89,12 @@
   background-repeat:   no-repeat;
   background-position: center center;
   background-size: 100% 100%, auto;
+}
+
+.controls {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
 }
