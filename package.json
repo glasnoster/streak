@@ -17,14 +17,14 @@
     "babel-plugin-transform-es2015-template-literals": "^6.22.0",
     "babel-preset-env": "^1.7.0",
     "chai": "^4.1.2",
-    "mocha": "^5.2.0"
-  },
-  "dependencies": {
+    "mocha": "^5.2.0",
     "npm-watch": "^0.4.0"
   },
   "watch": {
     "build": {
-      "patterns": ["src/"],
+      "patterns": [
+        "src/"
+      ],
       "extensions": "js,jsx,html,css",
       "ignore": "src/vendor/external.min.js",
       "quiet": true,
