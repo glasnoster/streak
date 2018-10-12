@@ -6,7 +6,7 @@
   "scripts": {
     "watch": "npm-watch",
     "test": "mocha ./test",
-    "build": "npx babel src --out-dir build --presets env --copy-files; browserify build/index.js -o build/index.js -d"
+    "build": "cp -r src/* build;rm build/*.js; browserify src/index.js -o build/index.js -d"
   },
   "author": "",
   "license": "ISC",
